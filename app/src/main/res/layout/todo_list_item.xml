@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="75dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="@dimen/margin">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardBackgroundColor="@color/amber"
+        app:cardCornerRadius="10sp"
+        android:elevation="@dimen/elevation">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:weightSum="4">
+
+            <CheckBox
+                android:id="@+id/completed_chcbox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:buttonTint="@color/black"
+                android:layout_weight="1"
+                android:checked="true" />
+
+
+            <TextView
+                android:id="@+id/titletxtview"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:padding="@dimen/padding"
+                android:text="@string/defaultText"
+                android:maxLines="4"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size" />
+
+            <TextView
+                android:id="@+id/idtxtviews"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="@dimen/padding"
+                android:text="@string/defaultNumber"
+                android:gravity="right"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.cardview.widget.CardView>
+
+</FrameLayout>

@@ -1,5 +1,8 @@
 package com.example.mvvm_practice_app.viewmodel;
 
+import android.content.Context;
+import android.widget.Toast;
+
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
@@ -24,7 +27,7 @@ public class MovieListViewModel extends ViewModel {
         return moviesList;
     }
 
-    public void makeApiCall() {
+    public void makeApiCall(Context context) {
         APIService apiService = RetrofitInstance.getRetrofitClient().create(APIService.class);
         Call<List<MovieModel>> call = apiService.getMovieList();
         call.enqueue(new Callback<List<MovieModel>>() {
@@ -35,6 +38,7 @@ public class MovieListViewModel extends ViewModel {
 
             @Override
             public void onFailure(Call<List<MovieModel>> call, Throwable t) {
+                Toast.makeText(context,t.getMessage().toString(), Toast.LENGTH_SHORT).show();
                 moviesList.postValue(null);
             }
         });

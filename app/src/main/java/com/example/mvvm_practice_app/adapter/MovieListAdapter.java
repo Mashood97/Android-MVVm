@@ -52,7 +52,7 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.MyVi
                 itemClickListener.onMovieClick(movieList.get(position));
             }
         });
-//        Glide.with(context).load(this.movieList.get(position).getImage()).apply(RequestOptions.centerCropTransform()).into(holder.imageView);
+        Glide.with(context).load(this.movieList.get(position).getImage()).apply(RequestOptions.centerCropTransform()).into(holder.imageView);
     }
 
     @Override

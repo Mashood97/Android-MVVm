@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity implements MovieListAdapter.
         recyclerView.setAdapter(adapter);
 
         //initialize view model
-        viewmodel = ViewModelProviders.of(this).get(MovieListViewModel.class);
+        viewmodel = new ViewModelProvider(this).get(MovieListViewModel.class);
         viewmodel.getMoviesMutableList().observe(this, new Observer<List<MovieModel>>() {
             @Override
             public void onChanged(List<MovieModel> movieModels) {
@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity implements MovieListAdapter.
 
             }
         });
-        viewmodel.makeApiCall();
+        viewmodel.makeApiCall(this);
     }
 
     @Override
